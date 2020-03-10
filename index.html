@@ -3,10 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pokemon Game</title>
 </head>
 <body>
-    <h1>test    </h1>
-    <h2>test</h2>
+
+    <script>
+
+function consultPokemon(id) {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    .then(function (response) {
+        response.json()
+        .then(function (pokemon){
+            console.log (pokemon.name)
+        })
+    })
+}
+consultPokemon(26)
+
+    </script>
 </body>
 </html>
