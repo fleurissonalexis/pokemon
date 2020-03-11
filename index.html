@@ -6,24 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon Game</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
-    <h1 class="titre">pokemon Game</h1>
 
-    <button onclick="consultpokemons()">New Battle</button>
-
-    <div class="pokemon-list" id="listPokemon">
-        <div class="pokemon" id="pokemon-1">
-            <img src="" alt="">
-            <p></p>
+    <div id="root">
+        <div id="button-div">
+            <button id="get-pokemon-btn">Get Pokemon</button>
+            <button id="battle-btn">Battle!</button>
         </div>
-
-        <div class="VS">VS</div>
-
-        <div class="pokemon" id="pokemon-2">
-            <img src="" alt="">
-            <p></p>
+        <div class="data"></div>
+        <div class="battleHistory">
+            <h3>Battle History</h3>
+            <div id="history"></div>
         </div>
     </div>
 
