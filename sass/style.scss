@@ -1,0 +1,199 @@
+//colors
+$black: black;
+$white: white;
+$color_japanese_laurel_approx: green;
+$red: red;
+$color_valencia_approx: rgb(209, 66, 66);
+$color_martini_60: rgba(158, 158, 158, 0.603);
+$color_plum_approx: #86377b;
+$color_ebony_clay_approx: #27273c;
+
+//fonts
+$font_0: Raleway;
+$font_1: sans-serif;
+
+
+body {
+	font-family: $font_0, $font_1;
+	font-size: 18px;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.gameboy {
+    height: 122vh;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: -120px;
+    background: url("../img/gameboy2.png") center bottom no-repeat;
+    background-size: cover;
+}
+
+button {
+	margin-top: 100px;
+	font-family: $font_0, $font_1;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: $white;
+	//Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	text-shadow: -1.5px 1px 2px $black;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 10px;
+	padding: 8px;
+	margin: 0 10px;
+	outline: none;
+	border: none;
+	background-color: $color_valencia_approx;
+	&:hover {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0 0 3px 3px $color_martini_60.3_approx;
+	}
+}
+.title {
+	text-align: center;
+	padding: 16px;
+}
+.pokemon-list {
+	display: flex;
+	max-width: 400px;
+	margin: 390px 0 0 480px;
+}
+.pokemon {
+	font-size: 14px;
+	text-align: center;
+	color: $black;
+	line-height: 5px;
+	padding: 20px;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 10px;
+	margin: 10px 0 55px 20px;
+	background: #f5f5f5bd;
+}
+.VS {
+	font-family: $font_0, $font_1;
+	font-size: 32px;
+	font-weight: 600;
+	text-align: center;
+	margin: auto;
+	color: $white;
+}
+img {
+	width: 100%;
+}
+#jauge {
+	height: 10px;
+	width: 100%;
+	background-color: $color_japanese_laurel_approx;
+}
+#jauge2 {
+	height: 10px;
+	width: 100%;
+	background-color: $red;
+}
+.boutons {
+	text-align: center;
+	margin-top: -215px;
+}
+#div-btn {
+	display: flex;
+	justify-content: center;
+	flex-wrap: nowrap;
+}
+div {
+	&#jauge {
+		max-width: 100%;
+	}
+	&#jauge2 {
+		max-width: 100%;
+	}
+	&#round {
+		color: $white;
+		text-align: center;
+	}
+	&#resultat {
+		color: $white;
+		text-align: center;
+	}
+}
+.oula {
+	display: inline;
+	margin-right: 24px;
+	margin-left: 40px;
+}
+@keyframes move_wave {
+	0% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translateX(0) translateZ(0) scaleY(1);
+	}
+	50% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translateX(-25%) translateZ(0) scaleY(0.55);
+	}
+	100% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translateX(-50%) translateZ(0) scaleY(1);
+	}
+}
+.waveWrapper {
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+	&.waveAnimation {
+		z-index: -1!important;
+	}
+}
+.waveWrapperInner {
+	position: absolute;
+	width: 100%;
+	overflow: hidden;
+	height: 100%;
+	bottom: -1px;
+	background-image: linear-gradient(to top, $color_plum_approx 20%, $color_ebony_clay_approx 80%);
+}
+.bgTop {
+	z-index: 15;
+	opacity: 0.5;
+}
+.bgMiddle {
+	z-index: 10;
+	opacity: 0.75;
+}
+.bgBottom {
+	z-index: 5;
+}
+.wave {
+	position: absolute;
+	left: 0;
+	width: 200%;
+	height: 100%;
+	background-repeat: repeat no-repeat;
+	background-position: 0 bottom;
+	//Instead of the line below you could use @include transform-origin($origin-x, $origin-y, $origin-z, $only3d)
+	transform-origin: center bottom;
+}
+.waveTop {
+	background-size: 50% 100px;
+}
+.waveAnimation {
+	.waveTop {
+		animation: move-wave 3s;
+		animation-delay: 1s;
+	}
+	.waveMiddle {
+		animation: move_wave 10s linear infinite;
+	}
+	.waveBottom {
+		animation: move_wave 15s linear infinite;
+	}
+}
+.waveMiddle {
+	background-size: 50% 120px;
+}
+.waveBottom {
+	background-size: 50% 100px;
+}

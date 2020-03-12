@@ -1,5 +1,3 @@
-
-
 let list = document.getElementById("listPokemon")
 
 

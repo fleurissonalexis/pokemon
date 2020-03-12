@@ -4,37 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon Game</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Combat Pokemon</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <h1 class="titre">pokemon Game</h1>
 
-    <button onclick="battlePokemonUser ()" >attaque user</button>
-    <button onclick="consultpokemons()" >changement de pokemon</button>
-    <button onclick="soinPokemonUser()" >utiliser une potion user</button>
-    <button onclick="protegeUser()" >se proteger User</button>
-
-    <p id="#resultat" ></p>
-    <div class="pokemon-list" id="listPokemon">
-        <div class="pokemon" id="pokemon-1">
-            <img src="" alt="">
-            <p></p>
-            <p id="vie1"></p>
-            <div id="jauge"></div>
+    <div class="waveWrapper waveAnimation">
+        <div class="waveWrapperInner bgTop">
+            <div class="wave waveTop"
+                style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
         </div>
-
-        <div class="VS">VS</div>
-        <div id="round"></div>
-        <div id="resultat"></div>
-
-        <div class="pokemon" id="pokemon-2">
-            <img src="" alt="">
-            <p></p>
-            <p id="vie2"></p>
-            <div id="jauge2"></div>
+        <div class="waveWrapperInner bgMiddle">
+            <div class="wave waveMiddle"
+                style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
         </div>
+        <div class="waveWrapperInner bgBottom">
+            <div class="wave waveBottom"
+                style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+        </div>
+    </div>
+
+    <div class="gameboy">
+        <p id="#resultat"></p>
+        <div class="pokemon-list" id="listPokemon">
+            <div class="pokemon" id="pokemon-1">
+                <img src="" alt="">
+                <p></p>
+                <p id="vie1"></p>
+                <div id="jauge"></div>
+            </div>
+
+            <div class="oula">
+                <div class="VS">VS</div>
+                <div id="round"></div>
+                <div id="resultat"></div>
+            </div>
+
+            <div class="pokemon" id="pokemon-2">
+                <img src="" alt="">
+                <p></p>
+                <p id="vie2"></p>
+                <div class=" vs"></div>
+                <div id="jauge2"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="boutons">
+        <button onclick="battlePokemonUser ()">Attaquer</button>
+        <button onclick="protegeUser()">Se proteger</button>
+        <button onclick="soinPokemonUser()">Potion</button>
+        <button onclick="consultpokemons()">Changer Pokemon</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

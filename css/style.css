@@ -1,0 +1,196 @@
+body {
+  font-family: Raleway, sans-serif;
+  font-size: 18px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.gameboy {
+  height: 122vh;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: -120px;
+  background: url("../img/gameboy2.png") center bottom no-repeat;
+  background-size: cover;
+}
+
+button {
+  margin-top: 100px;
+  font-family: Raleway, sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: white;
+  text-shadow: -1.5px 1px 2px black;
+  border-radius: 10px;
+  padding: 8px;
+  margin: 0 10px;
+  outline: none;
+  border: none;
+  background-color: #d14242;
+}
+button:hover {
+  box-shadow: 0 0 3px 3px rgba(158, 158, 158, 0.603) 0.3_approx;
+}
+
+.title {
+  text-align: center;
+  padding: 16px;
+}
+
+.pokemon-list {
+  display: flex;
+  max-width: 400px;
+  margin: 390px 0 0 480px;
+}
+
+.pokemon {
+  font-size: 14px;
+  text-align: center;
+  color: black;
+  line-height: 5px;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px 0 55px 20px;
+  background: #f5f5f5bd;
+}
+
+.VS {
+  font-family: Raleway, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin: auto;
+  color: white;
+}
+
+img {
+  width: 100%;
+}
+
+#jauge {
+  height: 10px;
+  width: 100%;
+  background-color: green;
+}
+
+#jauge2 {
+  height: 10px;
+  width: 100%;
+  background-color: red;
+}
+
+.boutons {
+  text-align: center;
+  margin-top: -215px;
+}
+
+#div-btn {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+div#jauge {
+  max-width: 100%;
+}
+div#jauge2 {
+  max-width: 100%;
+}
+div#round {
+  color: white;
+  text-align: center;
+}
+div#resultat {
+  color: white;
+  text-align: center;
+}
+
+.oula {
+  display: inline;
+  margin-right: 24px;
+  margin-left: 40px;
+}
+
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.55);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+.waveWrapper {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+.waveWrapper.waveAnimation {
+  z-index: -1 !important;
+}
+
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  bottom: -1px;
+  background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
+}
+
+.bgTop {
+  z-index: 15;
+  opacity: 0.5;
+}
+
+.bgMiddle {
+  z-index: 10;
+  opacity: 0.75;
+}
+
+.bgBottom {
+  z-index: 5;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+
+.waveTop {
+  background-size: 50% 100px;
+}
+
+.waveAnimation .waveTop {
+  animation: move-wave 3s;
+  animation-delay: 1s;
+}
+.waveAnimation .waveMiddle {
+  animation: move_wave 10s linear infinite;
+}
+.waveAnimation .waveBottom {
+  animation: move_wave 15s linear infinite;
+}
+
+.waveMiddle {
+  background-size: 50% 120px;
+}
+
+.waveBottom {
+  background-size: 50% 100px;
+}
+
+/*# sourceMappingURL=style.css.map */

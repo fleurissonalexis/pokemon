@@ -1,0 +1,16 @@
+{
+  "name": "pokemon-86e1a1b7bd246fa4c27105f711ab0970cb1ea7a9",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node.js": "0.0.1-security",
+    "sass": "^1.26.3"
+  }
+}
