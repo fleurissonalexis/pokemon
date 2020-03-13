@@ -71,6 +71,9 @@ function crepokemon(pokemon, num) {
 consultpokemons();
 
 
+
+    
+
 const randomchoice = () => {
     let max = 4
     let min = 1
@@ -96,29 +99,11 @@ const getlife = () => {
 
 // Les pokemon s'attaque 
 
-const Launch = () => {
-    $("#vie1").html(userLife)
-    $("#vie2").html(robotLife)
-    $("#round").html(`round : ${round}`)
-    
-
-    document.getElementById('jauge').style.width = `${userLife}` + '%';
-    document.getElementById('jauge2').style.width = `${robotLife}` + '%';
-
-    console.log(`userLife: ${userLife}`)
-    console.log(`robotLife: ${robotLife}`)
-    console. log(`round n°${round}`)
-    
-    const forceUser = getForce()
-    var choirobot = randomchoice()
-    console.log (`numero choix du robot : ${choirobot}`)
-
-}
 const battlePokemonUser = () => {
     $("#vie1").html(userLife)
     $("#vie2").html(robotLife)
     $("#round").html(`round : ${round}`)
-    
+    $("#gif1").attr("src",);
 
     document.getElementById('jauge').style.width = `${userLife}` + '%';
     document.getElementById('jauge2').style.width = `${robotLife}` + '%';
@@ -145,8 +130,10 @@ const battlePokemonUser = () => {
         if(robotLife <= 0 && userLife > 0){
             console.log("win")
             nextRound()
+
         }else if(userLife <= 0 && robotLife > 0){
             loosePage()
+
         }
     }else{
 
@@ -247,13 +234,6 @@ const soinPokemonRobot = () => {
 
 // les pokemons se protège
 const protegeUser = () => {
-    $("#vie1").html(userLife)
-    $("#vie2").html(robotLife)
-    $("#round").html(`round : ${round}`)
-    
-
-    document.getElementById('jauge').style.width = `${userLife}` + '%';
-    document.getElementById('jauge2').style.width = `${robotLife}` + '%';
 
     $("#vie1").html(userLife)
     $("#vie2").html(robotLife)
@@ -317,7 +297,6 @@ const protegeRobot = () => {
 }
 
 
-
 const nextRound = () => {
     robotLife = 100
     userLife = 100
@@ -326,6 +305,7 @@ const nextRound = () => {
     consultpokemons2();
     $("#resultat").html("manche suivante")
     round ++
+
 }
 
 const loosePage = () => {
@@ -335,20 +315,23 @@ const loosePage = () => {
     $("#resultat").html("tu as perdu")
     
     
-    fetch(`https://api.giphy.com/v1/gifs/random?api_key=Ywoh06QC87SD53OtIyyhhxyzM7MZKSAl&q=lose&limit=1w`)
+    fetch(`https://api.giphy.com/v1/gifs/random?api_key=Ywoh06QC87SD53OtIyyhhxyzM7MZKSAl&tag=lose&limit=1`)
     .then(resp => resp.json())
     .then(resd => {
     console.log(resd)
-        let gif1 = resd.data.data.image_original_url
+        let gif1 = resd.data.image_original_url
         console.log(gif1)
         $("#gif1").attr("src", gif1);
     })
-    
+
 
     // get number of round
 }
 
 
+const restart = () =>{
+    document.location.reload(true);
+}
 
 
 

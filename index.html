@@ -10,7 +10,9 @@
 </head>
 
 <body>
-    <img id="gif1" src="" alt="">
+    <div class="giff" >
+        <img id="gif1" src="" alt="">
+    </div>
     <div class="waveWrapper waveAnimation">
         <div class="waveWrapperInner bgTop">
             <div class="wave waveTop"
@@ -25,8 +27,6 @@
                 style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
         </div>
     </div>
-
-
 
 
     <div class="gameboy">
@@ -56,10 +56,14 @@
     </div>
 
     <div class="boutons">
-        <button onclick="battlePokemonUser ()">Attaquer</button>
+        <button onclick="battlePokemonUser()">Attaquer</button>
         <button onclick="protegeUser()">Se proteger</button>
         <button onclick="soinPokemonUser()">Potion</button>
         <button onclick="consultpokemons()">Changer Pokemon</button>
+        <div>
+            <button onclick="restart()">relancer</button>
+        </div>
+        
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
