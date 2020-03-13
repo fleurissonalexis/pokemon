@@ -3,6 +3,38 @@ let list = document.getElementById("listPokemon");
 
 ////////////////////////////////////////////////////
 //cherche le pokemon
+function consultpokemons2(id, num) {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+        .then(function (response) {
+            response.json()
+                .then(function (pokemon) {
+                    crepokemon2(pokemon, num)
+                })
+        })
+}
+
+
+// crée un num aleatoire et un id pour le pokemon 1 et 2
+function consultpokemons2() {
+    let deuxiemeID = Math.round(Math.random() * 150)
+    consultPokemon(deuxiemeID, 2)
+}
+
+
+
+// affiche son nom + img
+function crepokemon2(pokemon, num) {
+    let item = list.querySelector(`#pokemon-${num}`)
+
+    let img = item.getElementsByTagName("img")[0]
+    img.setAttribute("src", pokemon.sprites.front_default)
+
+    let nom = item.getElementsByTagName("p")[0]
+    nom.textContent = pokemon.name
+
+}
+
+////////
 function consultPokemon(id, num) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
         .then(function (response) {
@@ -12,7 +44,6 @@ function consultPokemon(id, num) {
                 })
         })
 }
-
 
 
 // crée un num aleatoire et un id pour le pokemon 1 et 2
@@ -292,7 +323,7 @@ const nextRound = () => {
     userLife = 100
 
     robotLife = robotLife + 50*round
-    consultpokemons();
+    consultpokemons2();
     $("#resultat").html("manche suivante")
     round ++
 }
@@ -300,21 +331,20 @@ const nextRound = () => {
 const loosePage = () => {
     robotLife = 100
     userLife = 100
-    round = 0
+    round = 1
     $("#resultat").html("tu as perdu")
     
     
-    fetch(`https://api.giphy.com/v1/gifs/search?api_key=Ywoh06QC87SD53OtIyyhhxyzM7MZKSAl&q=lose&limit=20`)
+    fetch(`https://api.giphy.com/v1/gifs/random?api_key=Ywoh06QC87SD53OtIyyhhxyzM7MZKSAl&q=lose&limit=1w`)
     .then(resp => resp.json())
     .then(resd => {
-        var numero = Math.round(Math.random() * 21)
-        let gif1 = resd.data[numero].url
+    console.log(resd)
+        let gif1 = resd.data.data.image_original_url
         console.log(gif1)
-        $("#blocimg").attr("src", gif1);
-
+        $("#gif1").attr("src", gif1);
     })
-
     
+
     // get number of round
 }
 
