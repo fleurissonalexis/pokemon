@@ -1,19 +1,7 @@
 let list = document.getElementById("listPokemon");
-var api = "http://api.giphy.com/v1/gifs/search?";
-var apiKey = "&api_key=Ywoh06QC87SD53OtIyyhhxyzM7MZKSAl";
-var query = "&q=loose";
 
 
-function setup (){
-    noCanvas();
-    var url = api + apiKey + query;
-    loadJSON(url, gotData);
-}
-
-function gotData (giphy){
-    createImg (giphy.data[0].image.original.url)
-}
-
+////////////////////////////////////////////////////
 //cherche le pokemon
 function consultPokemon(id, num) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
@@ -24,7 +12,6 @@ function consultPokemon(id, num) {
                 })
         })
 }
-
 
 
 
@@ -315,6 +302,19 @@ const loosePage = () => {
     userLife = 100
     round = 0
     $("#resultat").html("tu as perdu")
+    
+    
+    fetch(`https://api.giphy.com/v1/gifs/search?api_key=Ywoh06QC87SD53OtIyyhhxyzM7MZKSAl&q=lose&limit=20`)
+    .then(resp => resp.json())
+    .then(resd => {
+        var numero = Math.round(Math.random() * 21)
+        let gif1 = resd.data[numero].url
+        console.log(gif1)
+        $("#blocimg").attr("src", gif1);
+
+    })
+
+    
     // get number of round
 }
 
