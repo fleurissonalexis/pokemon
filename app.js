@@ -1,6 +1,18 @@
-let list = document.getElementById("listPokemon")
+let list = document.getElementById("listPokemon");
+var api = "http://api.giphy.com/v1/gifs/search?";
+var apiKey = "&api_key=Ywoh06QC87SD53OtIyyhhxyzM7MZKSAl";
+var query = "&q=loose";
 
 
+function setup (){
+    noCanvas();
+    var url = api + apiKey + query;
+    loadJSON(url, gotData);
+}
+
+function gotData (giphy){
+    createImg (giphy.data[0].image.original.url)
+}
 
 //cherche le pokemon
 function consultPokemon(id, num) {
